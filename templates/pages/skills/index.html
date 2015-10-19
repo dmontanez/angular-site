@@ -1,0 +1,76 @@
+<div class="container" id="content-panel-head">
+    <h3><strong>Skills</strong></h3>
+</div>
+
+<div class="container">    
+    
+    <!-- Panel Content for Skills Page -->
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body" id="content-panel-body">
+                <div class="dropdown small">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="contDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <text>ALL</text>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li tab-click><a href="">PROFICIENT</a></li>
+                        <li tab-click><a href="">MODERATELY PROFICIENT</a></li>
+                        <li tab-click><a href="">PRIOR EXPERIENCE</a></li>
+                        <li tab-click><a href="">CURRENTLY LEARNING</a></li>
+                        <li tab-click><a href="">OTHERS</a></li>
+                        <li tab-click><a href="">OPEN BADGES</a></li>
+                        <li tab-click class="active"><a href="">ALL</a></li>
+                        <li tab-click><a href="#temp">TEMP</a></li>
+                    </ul>
+                </div>
+        
+                <ul class="nav nav-tabs">
+                    <li tab-click><a href="">PROFICIENT</a></li>
+                    <li tab-click><a href="">MODERATELY PROFICIENT</a></li>
+                    <li tab-click><a href="">PRIOR EXPERIENCE</a></li>
+                    <li tab-click><a href="">CURRENTLY LEARNING</a></li>
+                    <li tab-click><a href="">OTHERS</a></li>
+                    <li tab-click><a href="">OPEN BADGES</a></li>
+                    <li tab-click class="active"><a href="">ALL</a></li>
+                    <li tab-click><a href="#temp">TEMP</a></li>
+                </ul>         
+
+                <br>
+        
+                <section ng-repeat="skill in tec.skills">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">{{skill.level}}</h4>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="item in skill.items">
+                                    <span class="badge">{{item.num}}</span>
+                                    <em ><small>{{item.name}}</small></em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>            
+                </section>
+                <section>
+                    <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Open Badges</h4>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <h5>Code School</h5>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <iframe frameborder="0" scrolling="no" src="https://credly.com/otherembed/2108710/4/0/0/0" width="100%" height="220"></iframe>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>

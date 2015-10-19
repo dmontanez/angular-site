@@ -1,0 +1,52 @@
+<div class="container" id="content-panel-head">
+    <h3><strong>Experience</strong></h3>
+</div>
+
+<div class="container">    
+    
+    <!-- Panel Content for Experience Page -->
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body" id="content-panel-body">
+                <div class="dropdown small">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="contDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <text>ALL</text>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li tab-click><a href="">LEIDOS</a></li>
+                        <li tab-click><a href="">CSC</a></li>
+                        <li tab-click><a href="">OXY</a></li>
+                        <li tab-click class="active"><a href="">ALL</a></li>
+                        <li tab-click><a href="#temp">TEMP</a></li>
+                    </ul>
+                </div>
+        
+                <ul class="nav nav-tabs">
+                    <li tab-click><a href="">LEIDOS</a></li>
+                    <li tab-click><a href="">CSC</a></li>
+                    <li tab-click><a href="">OXY</a></li>
+                    <li tab-click class="active"><a href="">ALL</a></li>
+                    <li tab-click><a href="#temp">TEMP</a></li>
+                </ul>         
+        
+                <br>
+        
+                <section ng-repeat="position in ex.positions">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img ng-src={{position.images[0]}} height="100" />
+                            <h4 class="panel-title"><b>{{position.name}}</b></h4>
+                            <h5>{{position.title}}</h5>
+                            <div ng-hide="{{position.isCurrent}}"><h6>{{position.start | date}} - {{position.end | date}}</h6></div>
+                            <div ng-show="{{position.isCurrent}}"><h6>{{position.start | date}} - Present</h6></div>
+                        </div>
+                        <div class="panel-body">
+                            <em><small>{{position.descr}}</small></em>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>

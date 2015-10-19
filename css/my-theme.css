@@ -1,0 +1,105 @@
+
+/* ----------------------------------------------------------------------------------------- */
+
+#page-header-top {
+    background-image: url(../templates/pages/header/images/prpl_hex_1.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #201747;
+}
+
+.head-text,
+.head-text a,
+.head-text small{
+    color: white;
+}
+
+.nav-tabs > li > a{
+    background-color: #E7E7E7;
+    color: #003366;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border-radius: 0px;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus{
+    color: white;
+    background-color: #003366;
+    border-radius: 4px;
+}
+
+body { 
+    padding-bottom: 70px;
+}
+
+.panel .panel-default {
+    background-color: #F2F2F7;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    border-radius: 0px;
+    -webkit-box-shadow: -8px 8px 4px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: -8px 8px 4px 0px rgba(0,0,0,0.5);
+    box-shadow: -8px 8px 4px 0px rgba(0,0,0,0.5);
+}
+
+#frame-to-fit {
+    width: 90%;
+    height: 90%;
+}
+
+.navbar-fixed-bottom {
+    text-align: center;
+}
+
+.container .text-muted {
+  margin: 10px 0;
+}
+#foreground-img {
+    position: absolute;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    border-radius: 5px;
+    -webkit-box-shadow: -11px -7px 5px 0px rgba(0,0,0,0.32);
+    -moz-box-shadow: -11px -7px 5px 0px rgba(0,0,0,0.32);
+    box-shadow: -11px -7px 5px 0px rgba(0,0,0,0.32);
+    background-color: white;
+    bottom: 0px;
+    right: 0px;
+    width: 200px;
+    height: 200px;
+    z-index: 1000;
+}
+.my-button {
+    width: 200px;
+    border-radius: 5px;
+}
+
+[ng-cloak] {
+  display: none !important;
+}
+
+.about-pic {
+    padding-bottom: 50px;
+}
+
+.about-pic-modal{
+    padding: 20px 20px 20px 20px;
+}
+
+@media screen and (max-width: 650px) {
+     .about-text{
+        font-size: 15px;
+    }
+}
+/*----------------------------------------------------------------------------------------- */

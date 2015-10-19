@@ -1,0 +1,3 @@
+LazyLoad.js([
+    ''
+], function () {});
