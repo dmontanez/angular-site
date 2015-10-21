@@ -7,8 +7,13 @@ angular.module('myApp')
                     controller: 'tempCtrl',
                     controllerAs: 'ctrl'
                 })
-                .when('/education', {
+                 .when('/education', {
                     templateUrl: 'templates/pages/education/index.html',
+                     controller: 'edCtrl',
+                     controllerAs: 'ed'
+                 })
+                .when('/education/:id', {
+                    templateUrl: 'templates/pages/education/show.html',
                      controller: 'edCtrl',
                      controllerAs: 'ed'
                  })
@@ -23,7 +28,9 @@ angular.module('myApp')
                      controllerAs: 'tec'
                 })
                  .when('/projects', {
-                        templateUrl: 'templates/pages/projects/index.html'
+                    templateUrl: 'templates/pages/projects/index.html',
+                     controller: 'projCtrl',
+                     controllerAs: 'proj'
                 })
                  .when('/other', {
                         templateUrl: 'templates/pages/other/index.html'

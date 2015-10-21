@@ -54,7 +54,26 @@
     ];
 
 angular.module('myApp')
-    .controller('edCtrl', function() {
-        this.schools = institutions;
+    .controller('edCtrl', ['$routeParams', '$http', function($routeParams, $http) {
+        var controller = this;
+        var id = $routeParams.id;
+        this.idval = id;
+        if(id == null) {
+            //alert("No Set id = " + id);
+            $http.get('/home/schools')
+                .then(function successCallback(res) {
+                    controller.schools = res.data;
+                }, function errorCallback(err) {
+                    alert("Error: " + err);
+            });
+        } else {
+            //alert("Param is: " + id);
+            $http.get('/home/schools/' + id)
+                .then(function successCallback(res) {
+                    controller.school = res.data;
+                }, function errorCallback(err) {
+                    alert("Error: " + err);
+            });
+        };
         navDisplay();
-});
+}]);

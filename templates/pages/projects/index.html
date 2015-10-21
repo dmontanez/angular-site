@@ -1,1 +1,85 @@
-<p>PROJECTS</p>
+<div class="container" id="content-panel-head">
+    <h3><strong>Projects</strong></h3>
+</div>
+
+<div class="container">    
+    
+    <!-- Panel Content for Projects Page -->
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body" id="content-panel-body">
+                
+                <div class="dropdown small">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="contDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <text>ALL</text>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li tab-click><a href="">WEBSITE</a></li>
+                        <li tab-click><a href="">RESUME APP</a></li>
+                        <li tab-click><a href="">BUDGET NOTEBOOK</a></li>
+                        <li tab-click><a href="">TOURNAMENT CREATOR</a></li>
+                        <li tab-click class="active"><a href="#projects">ALL</a></li>
+                        <li tab-click><a href="#temp">TEMP</a></li>
+                    </ul>
+                </div>
+        
+                <ul class="nav nav-tabs">
+                    <li tab-click><a href="">WEBSITE</a></li>
+                    <li tab-click><a href="">RESUME APP</a></li>
+                    <li tab-click><a href="">BUDGET NOTEBOOK</a></li>
+                    <li tab-click><a href="">TOURNAMENT CREATOR</a></li>
+                    <li tab-click class="active"><a href="#projects">ALL</a></li>
+                    <li tab-click><a href="#temp">TEMP</a></li>
+                </ul>         
+
+                <br>
+                <section ng-repeat="project in proj.projects">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="{{project.link}}">
+                                        <img class="media-object" src="{{project.images[0]}}" height="64" />
+                                    </a>
+                                </div>
+                                <div class="media-body media-middle">
+                                    <h4 class="media-heading">{{project.name}}</h4>
+                                    <a href="{{project.link}}">
+                                        <em>{{project.link}}</em>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel-body">
+                            <em><small>{{project.descr}}</small></em>
+                            <table class="table table-condensed table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th><small>Technology Used</small></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr ng-repeat="use in project.uses">
+                                    <td><small>{{use}}</small></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+
+                        <div class="panel-body" ng-show="item.lenght">
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="item in project.items">
+                                    <span class="badge">{{item.num}}</span>
+                                    <em ><small>{{item.name}}</small></em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </section>
+</div>

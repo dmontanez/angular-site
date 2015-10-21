@@ -1,0 +1,49 @@
+<div class="container" id="content-panel-head">
+    <h3><strong>Education</strong></h3>
+</div>
+
+<div class="container">    
+    
+    <!-- Panel Content for Education Page -->
+    <section>
+        <div class="panel panel-default">
+             <div class="panel-body" id="content-panel-body">
+                <div class="dropdown small">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="contDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <text>ALL</text>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li ng-class="{ active: ed.idval == 1}"><a href="#education/1">PSU</a></li>
+                        <li ng-class="{ active: ed.idval == 2}"><a href="#education/2">CSUB</a></li>
+                        <li><a href="#education">ALL</a></li>
+                    </ul>
+                </div>
+
+                <ul class="nav nav-tabs">
+                    <li ng-class="{ active: ed.idval == 1}"><a href="#education/1">PSU</a></li>
+                    <li ng-class="{ active: ed.idval == 2}"><a href="#education/2">CSUB</a></li>
+                    <li><a href="#education">ALL</a></li>
+                </ul>
+
+                <br>
+                 
+                <section>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img ng-src={{ed.school.images[2]}} height="100" />
+                            <img ng-src={{ed.school.images[1]}} height="100" class="pull-right" style="text-align:left" />
+                            <h4 calss="panel-title">{{ed.school.name}}</h4>
+                            <h5>{{ed.school.degree}}, {{ed.school.major}}</h5>
+                            <h5 ng-show="school.minor.length">{{ed.school.minor}}</h5>
+                            <h6>{{ed.school.start | date}} - {{ed.school.end | date}}</h6>
+                        </div>
+                        <div class="panel-body" id="content-panel-body">
+                            <center><em ng-repeat="course in ed.school.courses"><small>{{course}}</small> - </em></center>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>

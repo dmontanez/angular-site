@@ -1,5 +1,5 @@
 angular.module('myApp')
-    .controller('tempCtrl',['$scope',
-        function($scope) {
-            $scope.tempVarCtrl = "Temp Controller";
+    .controller('tempCtrl',['$scope', '$http',
+        function($scope, $http) {
+            $scope.tempVarCtrl = "Temp Controller";        
     }]);
