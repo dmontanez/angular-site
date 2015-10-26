@@ -1,5 +1,8 @@
 <div class="container" id="content-panel-head">
-    <h3><strong>Skills</strong></h3>
+    <h3><strong>Skills</strong> - 
+    <em><small>Merit numbers associated with skills are taken from LinkedIn.</small></em>
+    </h3>
+    
 </div>
 
 <div class="container">    
@@ -14,31 +17,29 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li tab-click><a href="">PROFICIENT</a></li>
-                        <li tab-click><a href="">MODERATELY PROFICIENT</a></li>
-                        <li tab-click><a href="">PRIOR EXPERIENCE</a></li>
-                        <li tab-click><a href="">CURRENTLY LEARNING</a></li>
-                        <li tab-click><a href="">OTHERS</a></li>
-                        <li tab-click><a href="">OPEN BADGES</a></li>
-                        <li tab-click class="active"><a href="">ALL</a></li>
-                        <li tab-click><a href="#temp">TEMP</a></li>
+                        <li ng-class="{ active : tec.idval == 1}"><a href="#skills/1">PROFICIENT</a></li>
+                        <li ng-class="{ active : tec.idval == 2}"><a href="#skills/2">MODERATELY PROFICIENT</a></li>
+                        <li ng-class="{ active : tec.idval == 3}"><a href="#skills/3">PRIOR EXPERIENCE</a></li>
+                        <li ng-class="{ active : tec.idval == 4}"><a href="#skills/4">CURRENTLY LEARNING</a></li>
+                        <li ng-class="{ active : tec.idval == 5}"><a href="#skills/5">OTHERS</a></li>
+                        <li ng-class="{ active : tec.idval == 6}"><a href="#skills/6">OPEN BADGES</a></li>
+                        <li ng-class="{ active : tec.idval == 0}"><a href="#skills">ALL</a></li>
                     </ul>
                 </div>
         
                 <ul class="nav nav-tabs">
-                    <li tab-click><a href="">PROFICIENT</a></li>
-                    <li tab-click><a href="">MODERATELY PROFICIENT</a></li>
-                    <li tab-click><a href="">PRIOR EXPERIENCE</a></li>
-                    <li tab-click><a href="">CURRENTLY LEARNING</a></li>
-                    <li tab-click><a href="">OTHERS</a></li>
-                    <li tab-click><a href="">OPEN BADGES</a></li>
-                    <li tab-click class="active"><a href="">ALL</a></li>
-                    <li tab-click><a href="#temp">TEMP</a></li>
+                    <li ng-class="{ active : tec.idval == 1}"><a href="#skills/1">PROFICIENT</a></li>
+                    <li ng-class="{ active : tec.idval == 2}"><a href="#skills/2">MODERATELY PROFICIENT</a></li>
+                    <li ng-class="{ active : tec.idval == 3}"><a href="#skills/3">PRIOR EXPERIENCE</a></li>
+                    <li ng-class="{ active : tec.idval == 4}"><a href="#skills/4">CURRENTLY LEARNING</a></li>
+                    <li ng-class="{ active : tec.idval == 5}"><a href="#skills/5">OTHERS</a></li>
+                    <li ng-class="{ active : tec.idval == 6}"><a href="#skills/6">OPEN BADGES</a></li>
+                    <li ng-class="{ active : tec.idval == 0}"><a href="#skills">ALL</a></li>
                 </ul>         
 
                 <br>
         
-                <section ng-repeat="skill in tec.skills">
+                <section ng-repeat="skill in tec.skills" ng-show="skill.level.length">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">{{skill.level}}</h4>
@@ -53,7 +54,7 @@
                         </div>
                     </div>            
                 </section>
-                <section>
+                <section ng-show="tec.idval == 0 || tec.idval == 6">
                     <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">Open Badges</h4>

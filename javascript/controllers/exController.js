@@ -1,4 +1,4 @@
-var companies = [
+/* -- var companies = [
          {
             name: 'Leidos',
             title: 'Software Engineer',
@@ -36,10 +36,29 @@ var companies = [
                 "templates/pages/experience/images/ex_logo_oxy.png"
             ]
         }
-    ];
+    ]; -- */
 
 angular.module('myApp')
-    .controller('exCtrl', function() {
-        this.positions = companies;
+    .controller('exCtrl', ['$http', '$routeParams', function($http, $routeParams) {
+        var controller = this;
+        var id = $routeParams.id;        
+        if(id == null) {
+            id = 0;
+            $http.get('/api/companies')
+                .then(function successCallback(res) {
+                    controller.positions = res.data;
+                }, function errorCallback(err) {
+                    alert("Error: " + err);
+            });
+        } else {
+            //alert("Param is: " + id);
+            $http.get('/api/companies/' + id)
+                .then(function successCallback(res) {
+                    controller.positions = res;
+                }, function errorCallback(err) {
+                    alert("Error: " + err);
+            });
+        };
+        this.idval = id;
         navDisplay();
-});
+}]);

@@ -1,11 +1,16 @@
 {
-    "name": "node-mongo-rest",
-    "description": "NodeJS MongoDB REST API Example",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "express": "3.x",
-        "mongodb": "*",
-        "body-parser": "~1.0.1"
-    }
+  "name": "node-mongo-rest",
+  "description": "NodeJS MongoDB REST API Example",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "~1.0.1",
+    "express": "3.x",
+    "grunt": "^0.4.5",
+    "mongodb": "*"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
 }

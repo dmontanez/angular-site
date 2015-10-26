@@ -1,4 +1,4 @@
-var activities = [
+/* -- var activities = [
         {
             name: 'Website',
             link: "https://github.com/dmontanez/myAngularSite",
@@ -63,10 +63,29 @@ var activities = [
             descr: 'I created this web app to assist in running the summer team wrestling camp tournament that is run each year at CSUB. The application takes a list of teams, ' +
                     'and generates a tournament schedule to be run "Round Robin" style.'
         }
-    ];
+    ]; -- */
 
 angular.module('myApp')
-    .controller('projCtrl', ['$scope', '$http', function($scope, $http) {
-        this.projects = activities;
+    .controller('projCtrl', ['$routeParams', '$http', function($routeParams, $http) {
+        var controller = this;
+        var id = $routeParams.id;        
+        if(id == null) {
+            id = 0;
+            $http.get('/api/activities')
+                .then(function successCallback(res) {
+                    controller.projects = res.data;
+                }, function errorCallback(err) {
+                    alert("Error: " + err);
+            });
+        } else {
+            //alert("Param is: " + id);
+            $http.get('/api/activities/' + id)
+                .then(function successCallback(res) {
+                    controller.projects = res;
+                }, function errorCallback(err) {
+                    alert("Error: " + err);
+            });
+        };
+        this.idval = id;
         navDisplay();
 }]);

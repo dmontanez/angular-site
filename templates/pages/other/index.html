@@ -1,1 +1,56 @@
-<p>OTHER</p>
+<div class="container" id="content-panel-head">
+    <h3><strong>Other</strong> - 
+    <em><small>
+        A few additonal qualities I posess and where I have demonstrated them, as well as extracurricular activities I enjoy.    
+    </small></em>
+    </h3>
+</div>
+
+<div class="container">    
+    
+    <!-- Panel Content for Page -->
+    <section>
+        <div class="panel panel-default">
+             <div class="panel-body" id="content-panel-body">
+                
+                <div class="dropdown small">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="contDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <text>ALL</text>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li ng-class="{ active : adi.idval == 1}"><a href="#other/1">COMMUNICATION</a></li>
+                        <li ng-class="{ active : adi.idval == 2}"><a href="#other/2">LEADERSHIP</a></li>
+                        <li ng-class="{ active : adi.idval == 3}"><a href="#other/3">ACTIVITIES</a></li>
+                        <li ng-class="{ active : adi.idval == 0}"><a href="#other">ALL</a></li>
+                    </ul>
+                </div>
+        
+                <ul class="nav nav-tabs">
+                    <li ng-class="{ active : adi.idval == 1}"><a href="#other/1">COMMUNICATION</a></li>
+                    <li ng-class="{ active : adi.idval == 2}"><a href="#other/2">LEADERSHIP</a></li>
+                    <li ng-class="{ active : adi.idval == 3}"><a href="#other/3">ACTIVITIES</a></li>
+                    <li ng-class="{ active : adi.idval == 0}"><a href="#other">ALL</a></li>
+                </ul>         
+
+                <br>
+        
+                <section ng-repeat="interest in adi.interests" ng-show="interest.name.length">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">{{interest.name}}</h4>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="act in interest.acts">
+                                    {{act}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+</div>

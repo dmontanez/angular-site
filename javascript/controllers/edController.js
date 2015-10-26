@@ -1,4 +1,4 @@
-   var institutions = [
+   /* -- var institutions = [
         {
             name: 'Pennsylvania State University',
             degree: 'M.E.',
@@ -51,16 +51,15 @@
                 "templates/pages/education/images/sl_csub.png"
             ]
         }
-    ];
+    ]; -- */
 
 angular.module('myApp')
     .controller('edCtrl', ['$routeParams', '$http', function($routeParams, $http) {
         var controller = this;
         var id = $routeParams.id;
-        this.idval = id;
         if(id == null) {
-            //alert("No Set id = " + id);
-            $http.get('/home/schools')
+            id = 0;
+            $http.get('/api/schools')
                 .then(function successCallback(res) {
                     controller.schools = res.data;
                 }, function errorCallback(err) {
@@ -68,12 +67,13 @@ angular.module('myApp')
             });
         } else {
             //alert("Param is: " + id);
-            $http.get('/home/schools/' + id)
+            $http.get('/api/schools/' + id)
                 .then(function successCallback(res) {
-                    controller.school = res.data;
+                    controller.schools = res;
                 }, function errorCallback(err) {
                     alert("Error: " + err);
             });
         };
+        this.idval = id;
         navDisplay();
 }]);

@@ -1,4 +1,4 @@
-var technologies = [
+/* -- var technologies = [
         {
             level: 'Proficient',
             items: [
@@ -104,10 +104,29 @@ var technologies = [
                 }
             ]
         }
-    ];
+    ]; -- */
 
 angular.module('myApp')
-    .controller('tecCtrl', function() {
-        this.skills = technologies;
+    .controller('tecCtrl', ['$http', '$routeParams', function($http, $routeParams) {
+        var controller = this;
+        var id = $routeParams.id;
+        if(id == null) {
+            id = 0;
+            $http.get('/api/technologies')
+                .then(function successCallback(res) {
+                    controller.skills = res.data;
+                }, function errorCallback(err) {
+                    alert("Error: " + err);
+            });
+        } else {
+            //alert("Param is: " + id);
+            $http.get('/api/technologies/' + id)
+                .then(function successCallback(res) {
+                    controller.skills = res;
+                }, function errorCallback(err) {
+                    alert("Error: " + err);
+            });
+        };
+        this.idval = id;
         navDisplay();
-});
+}]);

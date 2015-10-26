@@ -14,25 +14,23 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li tab-click><a href="">LEIDOS</a></li>
-                        <li tab-click><a href="">CSC</a></li>
-                        <li tab-click><a href="">OXY</a></li>
-                        <li tab-click class="active"><a href="">ALL</a></li>
-                        <li tab-click><a href="#temp">TEMP</a></li>
+                        <li ng-class="{ active: ex.idval == 1}"><a href="#experience/1">LEIDOS</a></li>
+                        <li ng-class="{ active: ex.idval == 2}"><a href="#experience/2">CSC</a></li>
+                        <li ng-class="{ active: ex.idval == 3}"><a href="#experience/3">OXY</a></li>
+                        <li ng-class="{ active: ex.idval == 0}"><a href="#experience">ALL</a></li>
                     </ul>
                 </div>
         
                 <ul class="nav nav-tabs">
-                    <li tab-click><a href="">LEIDOS</a></li>
-                    <li tab-click><a href="">CSC</a></li>
-                    <li tab-click><a href="">OXY</a></li>
-                    <li tab-click class="active"><a href="">ALL</a></li>
-                    <li tab-click><a href="#temp">TEMP</a></li>
+                    <li ng-class="{ active: ex.idval == 1}"><a href="#experience/1">LEIDOS</a></li>
+                    <li ng-class="{ active: ex.idval == 2}"><a href="#experience/2">CSC</a></li>
+                    <li ng-class="{ active: ex.idval == 3}"><a href="#experience/3">OXY</a></li>
+                    <li ng-class="{ active: ex.idval == 0}"><a href="#experience">ALL</a></li>
                 </ul>         
         
                 <br>
         
-                <section ng-repeat="position in ex.positions">
+                <section ng-repeat="position in ex.positions" ng-show="position.name.length">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <img ng-src={{position.images[0]}} height="100" />

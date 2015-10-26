@@ -3,46 +3,49 @@ angular.module('myApp')
              function($routeProvider) {
                  $routeProvider
                 .when('/temp', {
-                    templateUrl: 'templates/pages/temp/index.html',
-                    controller: 'tempCtrl',
-                    controllerAs: 'ctrl'
+                     templateUrl: 'templates/pages/temp/index.html',
+                     controller: 'tempCtrl',
+                     controllerAs: 'ctrl'
                 })
-                 .when('/education', {
-                    templateUrl: 'templates/pages/education/index.html',
+                .when('/education/:id?', {
+                     templateUrl: 'templates/pages/education/index.html',
                      controller: 'edCtrl',
                      controllerAs: 'ed'
                  })
-                .when('/education/:id', {
-                    templateUrl: 'templates/pages/education/show.html',
-                     controller: 'edCtrl',
-                     controllerAs: 'ed'
-                 })
-                .when('/experience', {
-                    templateUrl: 'templates/pages/experience/index.html',
+                .when('/experience/:id?', {
+                     templateUrl: 'templates/pages/experience/index.html',
                      controller: 'exCtrl',
                      controllerAs: 'ex'
                 })
-                 .when('/skills', {
-                    templateUrl: 'templates/pages/skills/index.html',
+                 .when('/skills/:id?', {
+                     templateUrl: 'templates/pages/skills/index.html',
                      controller: 'tecCtrl',
                      controllerAs: 'tec'
                 })
-                 .when('/projects', {
-                    templateUrl: 'templates/pages/projects/index.html',
+                 .when('/projects/:id?', {
+                     templateUrl: 'templates/pages/projects/index.html',
                      controller: 'projCtrl',
                      controllerAs: 'proj'
                 })
-                 .when('/other', {
-                        templateUrl: 'templates/pages/other/index.html'
+                 .when('/other/:id?', {
+                     templateUrl: 'templates/pages/other/index.html',
+                     controller: 'adiCtrl',
+                     controllerAs: 'adi'
                 })
                  .when('/resume', {
-                        templateUrl: 'templates/pages/resume/index.html'
+                     templateUrl: 'templates/pages/resume/index.html',
+                     controller: 'resCtrl',
+                     controllerAs: 'res'
                 })
-                 .when('/about', {
-                        templateUrl: 'templates/pages/about-me/index.html'
+                 .when('/about/:id?', {
+                     templateUrl: 'templates/pages/about-me/index.html',
+                     controller: 'abtCtrl',
+                     controllerAs: 'about'
                 })
-                 .when('/contact', {
-                        templateUrl: 'templates/pages/contact/index.html'
+                 .when('/contact/:id?', {
+                     templateUrl: 'templates/pages/contact/index.html',
+                     controller: 'contCtrl',
+                     controllerAs: 'contact'
                 })
                  .otherwise({
                      redirectTo: '/',

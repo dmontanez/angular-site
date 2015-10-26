@@ -14,21 +14,21 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li tab-click><a href="#education/1">PSU</a></li>
-                        <li tab-click><a href="#education/2">CSUB</a></li>
-                        <li class="active" tab-click><a href="#education">ALL</a></li>
+                        <li ng-class="{active : ed.idval == 1}"><a href="#education/1">PSU</a></li>
+                        <li ng-class="{active : ed.idval == 2}"><a href="#education/2">CSUB</a></li>
+                        <li ng-class="{active : ed.idval == 0}"><a href="#education">ALL</a></li>
                     </ul>
                 </div>
 
                 <ul class="nav nav-tabs">
-                    <li tab-click><a href="#education/1">PSU</a></li>
-                    <li tab-click><a href="#education/2">CSUB</a></li>
-                    <li class="active" tab-click><a href="#education">ALL</a></li>
+                    <li ng-class="{active : ed.idval == 1}"><a href="#education/1">PSU</a></li>
+                    <li ng-class="{active : ed.idval == 2}"><a href="#education/2">CSUB</a></li>
+                    <li ng-class="{active : ed.idval == 0}"><a href="#education">ALL</a></li>
                 </ul>
 
                 <br>
                  
-                <section ng-repeat="school in ed.schools">
+                <section ng-repeat="school in ed.schools" ng-show="school.name.length">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <img ng-src={{school.images[2]}} height="100" />

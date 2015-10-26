@@ -1,5 +1,10 @@
 <div class="container" id="content-panel-head">
-    <h3><strong>Projects</strong></h3>
+    <h3><strong>Projects</strong>
+        - <em><small>
+        Each of the projects listed below, I have made substantial contributions to.  In fact, I have complete ownership of all of them,
+        with the exception of Budget Notebook, which was a team development project completed as part of my ME program through Penn State.
+    </small></em></h3>
+    
 </div>
 
 <div class="container">    
@@ -15,27 +20,26 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li tab-click><a href="">WEBSITE</a></li>
-                        <li tab-click><a href="">RESUME APP</a></li>
-                        <li tab-click><a href="">BUDGET NOTEBOOK</a></li>
-                        <li tab-click><a href="">TOURNAMENT CREATOR</a></li>
-                        <li tab-click class="active"><a href="#projects">ALL</a></li>
-                        <li tab-click><a href="#temp">TEMP</a></li>
+                        <li ng-class="{ active : proj.idval == 1}"><a href="#projects/1">WEBSITE</a></li>
+                        <li ng-class="{ active : proj.idval == 2}"><a href="#projects/2">RESUME APP</a></li>
+                        <li ng-class="{ active : proj.idval == 3}"><a href="#projects/3">BUDGET NOTEBOOK</a></li>
+                        <li ng-class="{ active : proj.idval == 4}"><a href="#projects/4">TOURNAMENT CREATOR</a></li>
+                        <li ng-class="{ active : proj.idval == 0}"><a href="#projects">ALL</a></li>
                     </ul>
                 </div>
         
                 <ul class="nav nav-tabs">
-                    <li tab-click><a href="">WEBSITE</a></li>
-                    <li tab-click><a href="">RESUME APP</a></li>
-                    <li tab-click><a href="">BUDGET NOTEBOOK</a></li>
-                    <li tab-click><a href="">TOURNAMENT CREATOR</a></li>
-                    <li tab-click class="active"><a href="#projects">ALL</a></li>
-                    <li tab-click><a href="#temp">TEMP</a></li>
+                    <li ng-class="{ active : proj.idval == 1}"><a href="#projects/1">WEBSITE</a></li>
+                    <li ng-class="{ active : proj.idval == 2}"><a href="#projects/2">RESUME APP</a></li>
+                    <li ng-class="{ active : proj.idval == 3}"><a href="#projects/3">BUDGET NOTEBOOK</a></li>
+                    <li ng-class="{ active : proj.idval == 4}"><a href="#projects/4">TOURNAMENT CREATOR</a></li>
+                    <li ng-class="{ active : proj.idval == 0}"><a href="#projects">ALL</a></li>
                 </ul>         
 
                 <br>
-                <section ng-repeat="project in proj.projects">
+                <section ng-repeat="project in proj.projects" ng-show="project.name.length">
                     <div class="panel panel-default">
+                        
                         <div class="panel-heading">
                             <div class="media">
                                 <div class="media-left">
@@ -54,28 +58,15 @@
 
                         <div class="panel-body">
                             <em><small>{{project.descr}}</small></em>
-                            <table class="table table-condensed table-bordered">
-                                <thead>
-                                  <tr>
-                                    <th><small>Technology Used</small></th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr ng-repeat="use in project.uses">
-                                    <td><small>{{use}}</small></td>
-                                  </tr>
-                                </tbody>
-                              </table>
+                            
+                            <h3><em><b><small>Technology Used</small></b></em></h3>
+                                <ul class="list-group">
+                                    <li class="list-group-item" ng-repeat="use in project.uses">
+                                        {{use}}
+                                    </li>
+                                </ul>                            
                         </div>
-
-                        <div class="panel-body" ng-show="item.lenght">
-                            <ul class="list-group">
-                                <li class="list-group-item" ng-repeat="item in project.items">
-                                    <span class="badge">{{item.num}}</span>
-                                    <em ><small>{{item.name}}</small></em>
-                                </li>
-                            </ul>
-                        </div>
+                        
                     </div>
                 </section>
                 
